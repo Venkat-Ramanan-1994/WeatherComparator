@@ -1,0 +1,66 @@
+2020-08-29 13:38:29,252 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 68 [(null)] - ***** Begin Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 13:38:34,354 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: Load scenario outline description 'NDTVWeatherCoimbatore'
+2020-08-29 13:38:34,368 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0106189
+2020-08-29 13:38:34,371 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: I open the website's home page
+2020-08-29 13:38:59,928 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:25.5553634
+2020-08-29 13:38:59,932 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I navigate to the weather section of the website
+2020-08-29 13:39:01,478 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:01.5439883
+2020-08-29 13:39:01,489 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select a city: 'Coimbatore' using Pin Your City from the left
+2020-08-29 13:39:04,810 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:03.3190270
+2020-08-29 13:39:04,814 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see that corresponding city 'Coimbatore' is available on the map with temperature information
+2020-08-29 13:39:05,007 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.1936835
+2020-08-29 13:39:05,015 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select the city 'Coimbatore' on the map
+2020-08-29 13:39:05,170 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.1446819
+2020-08-29 13:39:05,178 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see the corresponding city's 'Coimbatore' weather details
+2020-08-29 13:39:05,287 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.1090788
+2020-08-29 13:39:05,319 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 118 [(null)] - ***** End Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 13:39:13,985 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 68 [(null)] - ***** Begin Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 13:39:18,211 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: Load scenario outline description 'NDTVWeatherAhmedabad'
+2020-08-29 13:39:18,220 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0035518
+2020-08-29 13:39:18,225 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: I open the website's home page
+2020-08-29 13:39:50,773 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:32.5473478
+2020-08-29 13:39:50,782 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I navigate to the weather section of the website
+2020-08-29 13:39:53,133 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:02.3497249
+2020-08-29 13:39:53,140 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select a city: 'Ahmedabad' using Pin Your City from the left
+2020-08-29 13:39:54,811 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:01.6708084
+2020-08-29 13:39:54,819 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see that corresponding city 'Ahmedabad' is available on the map with temperature information
+2020-08-29 13:39:54,909 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0901919
+2020-08-29 13:39:54,914 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select the city 'Ahmedabad' on the map
+2020-08-29 13:39:55,017 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.1017522
+2020-08-29 13:39:55,025 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see the corresponding city's 'Ahmedabad' weather details
+2020-08-29 13:39:55,115 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0884502
+2020-08-29 13:39:55,128 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 118 [(null)] - ***** End Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 13:40:03,514 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 164 [(null)] - ***** End Feature: Get_Weather_Data_From_NDTV_Web *****
+2020-08-29 14:49:04,379 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 68 [(null)] - ***** Begin Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 14:49:09,581 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: Load scenario outline description 'NDTVWeatherCoimbatore'
+2020-08-29 14:49:09,595 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0122868
+2020-08-29 14:49:09,598 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: I open the website's home page
+2020-08-29 14:49:48,533 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:38.9344405
+2020-08-29 14:49:48,536 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I navigate to the weather section of the website
+2020-08-29 14:49:51,057 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:02.5201633
+2020-08-29 14:49:51,062 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select a city: 'Coimbatore' using Pin Your City from the left
+2020-08-29 14:49:55,951 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:04.8871461
+2020-08-29 14:49:55,955 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see that corresponding city 'Coimbatore' is available on the map with temperature information
+2020-08-29 14:49:56,084 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.1289860
+2020-08-29 14:49:56,093 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select the city 'Coimbatore' on the map
+2020-08-29 14:49:56,185 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0910057
+2020-08-29 14:49:56,193 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see the corresponding city's 'Coimbatore' weather details
+2020-08-29 14:49:56,275 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0806750
+2020-08-29 14:49:56,320 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 118 [(null)] - ***** End Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 14:50:05,467 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 68 [(null)] - ***** Begin Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 14:50:09,670 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: Load scenario outline description 'NDTVWeatherAhmedabad'
+2020-08-29 14:50:09,685 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0130225
+2020-08-29 14:50:09,696 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Given: I open the website's home page
+2020-08-29 14:50:57,613 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:47.9160689
+2020-08-29 14:50:57,622 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I navigate to the weather section of the website
+2020-08-29 14:50:58,602 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.9784708
+2020-08-29 14:50:58,610 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select a city: 'Ahmedabad' using Pin Your City from the left
+2020-08-29 14:51:00,927 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:02.3161197
+2020-08-29 14:51:00,943 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see that corresponding city 'Ahmedabad' is available on the map with temperature information
+2020-08-29 14:51:01,028 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0837784
+2020-08-29 14:51:01,037 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** When: I select the city 'Ahmedabad' on the map
+2020-08-29 14:51:01,103 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0644811
+2020-08-29 14:51:01,109 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 99 [(null)] - ***** Then: I should see the corresponding city's 'Ahmedabad' weather details
+2020-08-29 14:51:01,190 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 110 [(null)] - Step Execution Time : 00:00:00.0802875
+2020-08-29 14:51:01,215 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 118 [(null)] - ***** End Scenario: Validate if corresponding city is available on the map & validate the weather details on clicking the city **
+2020-08-29 14:51:09,711 [Test Thread #0] DEBUG WeatherComparator.stepDefinitions.Utilities.Hooks line: 164 [(null)] - ***** End Feature: Get_Weather_Data_From_NDTV_Web *****
