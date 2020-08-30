@@ -14,6 +14,7 @@ using OpenQA.Selenium.Remote;
 using System.Diagnostics;
 using System.Drawing;
 using BoDi;
+using System.Collections.Generic;
 
 namespace WeatherComparator.stepDefinitions.Utilities
 {
@@ -61,36 +62,34 @@ namespace WeatherComparator.stepDefinitions.Utilities
         [BeforeScenario]
         public void BeforeScenario()
         {
-            var browser = ConfigurationManager.AppSettings["defaultBrowser"].ToLower();
-            //    var mode = ConfigurationManager.AppSettings["seleniumMode"].ToLower();
-
-            Console.WriteLine("[BeforeScenario] - Start " + browser);
-            logger.Debug("***** Begin Scenario: " + scenarioTitle + " **");
-            Console.WriteLine("Scenario: " + scenarioTitle);
-
-            switch (browser)
+            if (!scenarioTags.Contains("api"))
             {
-                case "chrome":
-                    StartChrome();
-                    break;
-                case "firefox":
-                    StartFF();
-                    break;
-                case "ie":
-                    StartIE();
-                    break;
-                case "safari":
-                    //TODO Safari
-                    break;
+                var browser = ConfigurationManager.AppSettings["defaultBrowser"].ToLower();
+                Console.WriteLine("[BeforeScenario] - Start " + browser);
+                logger.Debug("***** Begin Scenario: " + scenarioTitle + " **");
+                Console.WriteLine("Scenario: " + scenarioTitle);
 
-                default:
-                    Console.WriteLine($"Invalid Browser Name Configured: {browser}");
-                    StartChrome();
-                    break;
+                switch (browser)
+                {
+                    case "chrome":
+                        StartChrome();
+                        break;
+                    case "firefox":
+                        StartFF();
+                        break;
+                    case "ie":
+                        StartIE();
+                        break;
+                    case "safari":
+                        //TODO Safari
+                        break;
+
+                    default:
+                        Console.WriteLine($"Invalid Browser Name Configured: {browser}");
+                        StartChrome();
+                        break;
+                }
             }
-
-
-
         }
 
         [BeforeStep]
@@ -105,8 +104,12 @@ namespace WeatherComparator.stepDefinitions.Utilities
         public void AfterStepEnds()
         {
             stepduration.Stop();
-            string scenarioDesc = ScenarioContext.Current.ScenarioInfo.Title;
-            scenarioDesc = ScenarioContext.Current.ScenarioInfo.Title + ", " + ScenarioContext.Current["scenarioOutlineDesc"];
+            try
+            {
+                string scenarioDesc = ScenarioContext.Current.ScenarioInfo.Title + ", " + ScenarioContext.Current["scenarioOutlineDesc"];
+            } catch (KeyNotFoundException keyNotFoundEx) {
+                logger.Debug($"Key Not Found : {keyNotFoundEx}");
+            }
             logger.Debug($"Step Execution Time : {stepduration.Elapsed}");
 
         }
@@ -114,48 +117,49 @@ namespace WeatherComparator.stepDefinitions.Utilities
         [AfterScenario]
         public void AfterScenario()
         {
-            var browser = ConfigurationManager.AppSettings["defaultBrowser"].ToLower();
-            logger.Debug("***** End Scenario: " + scenarioTitle + " **");
-            Console.WriteLine("[AfterScenario] - Quit browser");
-            bool testPass = true;
-
-            if (ScenarioContext.Current.TestError != null)
+            if (!scenarioTags.Contains("api"))
             {
+                var browser = ConfigurationManager.AppSettings["defaultBrowser"].ToLower();
+                logger.Debug("***** End Scenario: " + scenarioTitle + " **");
+                Console.WriteLine("[AfterScenario] - Quit browser");
+                bool testPass = true;
 
-                string errMsg = "error: " + ScenarioContext.Current.TestError.Message;
-                logger.Debug(errMsg);
-                Console.WriteLine(errMsg);
-                //driver.Manage().Cookies.AddCookie(cookieTestFail);
-                testPass = false;
-                try
+                if (ScenarioContext.Current.TestError != null)
                 {
-                    objBrowserUtils.TakeScreenshot(driver);
+
+                    string errMsg = "error: " + ScenarioContext.Current.TestError.Message;
+                    logger.Debug(errMsg);
+                    Console.WriteLine(errMsg);
+                    //driver.Manage().Cookies.AddCookie(cookieTestFail);
+                    testPass = false;
+                    try
+                    {
+                        objBrowserUtils.TakeScreenshot(driver);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Screenshot error: " + ex);
+                        objBrowserUtils.TakeScreenshot();
+
+                    }
                 }
-                catch (Exception ex)
+
+                if (browser.Equals("chrome"))
                 {
-                    Console.WriteLine("Screenshot error: " + ex);
-                    objBrowserUtils.TakeScreenshot();
-
+                    closeDriver();
+                    KillProcByName("chromedriver");
+                }
+                else if (browser.Equals("firefox"))
+                {
+                    closeDriver();
+                    KillProcByName("firefox");
+                }
+                else if (browser.Equals("ie"))
+                {
+                    closeDriver();
+                    KillProcByName("internetexplorer");
                 }
             }
-
-            if (browser.Equals("chrome"))
-            {
-                closeDriver();
-                KillProcByName("chromedriver");
-            }
-            else if (browser.Equals("firefox"))
-            {
-                closeDriver();
-                KillProcByName("firefox");
-            }
-            else if (browser.Equals("ie"))
-            {
-                closeDriver();
-                KillProcByName("internetexplorer");
-            }
-
-
         }
 
         [AfterFeature]

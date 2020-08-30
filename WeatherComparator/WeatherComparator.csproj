@@ -79,6 +79,9 @@
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp.Net2, Version=102.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.Net2.1.1.11\lib\net20\RestSharp.Net2.dll</HintPath>
+    </Reference>
     <Reference Include="SpecRun.SpecFlowPlugin, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecRun.SpecFlow.2-4-0.3.2.15\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
     </Reference>
@@ -127,6 +130,8 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="data\GetWeatherAPIRequest.json" />
+    <None Include="features\Get_Weather_Data_From_API.feature" />
     <None Include="features\Get_Weather_Data_From_NDTV_Web.feature" />
     <None Include="localtesting.runsettings" />
     <None Include="localtesting.srprofile">
@@ -147,10 +152,13 @@
   <ItemGroup>
     <Compile Include="pageFactory\HomePage.cs" />
     <Compile Include="pageFactory\WeatherPage.cs" />
+    <Compile Include="stepDefinitions\Get_Weather_Data_From_API_Steps.cs" />
+    <Compile Include="stepDefinitions\Utilities\APIUtils.cs" />
+    <Compile Include="stepDefinitions\Utilities\AutomationException.cs" />
     <Compile Include="stepDefinitions\Utilities\WebUtils.cs" />
     <Compile Include="stepDefinitions\Utilities\CommonSteps.cs" />
     <Compile Include="stepDefinitions\Utilities\Hooks.cs" />
-    <Compile Include="stepDefinitions\WeatherTest_NDTV_Web_Steps.cs" />
+    <Compile Include="stepDefinitions\Get_Weather_Data_From_NDTV_Web_Steps.cs" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

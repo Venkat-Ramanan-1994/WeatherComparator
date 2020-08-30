@@ -270,6 +270,7 @@ D:\TestVagrant\WeatherComparator\bin\Debug\Microsoft.VisualStudio.TestPlatform.T
 D:\TestVagrant\WeatherComparator\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\TestVagrant\WeatherComparator\bin\Debug\Newtonsoft.Json.dll
 D:\TestVagrant\WeatherComparator\bin\Debug\nunit.framework.dll
+D:\TestVagrant\WeatherComparator\bin\Debug\RestSharp.Net2.dll
 D:\TestVagrant\WeatherComparator\bin\Debug\SpecRun.SpecFlowPlugin.dll
 D:\TestVagrant\WeatherComparator\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 D:\TestVagrant\WeatherComparator\bin\Debug\System.Threading.Tasks.Extensions.dll
@@ -297,7 +298,6 @@ D:\TestVagrant\WeatherComparator\bin\Debug\TestStack.White.xml
 D:\TestVagrant\WeatherComparator\bin\Debug\Utf8Json.xml
 D:\TestVagrant\WeatherComparator\bin\Debug\WebDriver.xml
 D:\TestVagrant\WeatherComparator\bin\Debug\WebDriver.Support.xml
-D:\TestVagrant\WeatherComparator\obj\Debug\WeatherComparator.csprojAssemblyReference.cache
 D:\TestVagrant\WeatherComparator\obj\Debug\WeatherComparator.csproj.CoreCompileInputs.cache
 D:\TestVagrant\WeatherComparator\obj\Debug\WeatherComparator.csproj.CopyComplete
 D:\TestVagrant\WeatherComparator\obj\Debug\WeatherComparator.dll

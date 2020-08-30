@@ -1,0 +1,26 @@
+﻿[
+{
+    "testCaseKey" : "ByCityName",
+    "q" :"Coimbatore"    
+},
+{
+    "testCaseKey" : "ByCityName",
+    "q" :"Ahmedabad"   
+},
+{
+    "testCaseKey" : "ByCityId",
+    "id" : "1279233"    
+},
+{
+    "testCaseKey" : "ByGeographicCoordinates",
+    "lat" : "76.97",
+    "lon" : "11"
+},
+{
+    "testCaseKey" : "ByZipCode",
+    "zip" : "641001,IN"    
+}
+]
+
+
+
