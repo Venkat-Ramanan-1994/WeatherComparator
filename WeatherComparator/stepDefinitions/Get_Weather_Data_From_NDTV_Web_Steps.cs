@@ -1,13 +1,16 @@
-﻿using NUnit.Framework;
+﻿using Castle.Core.Internal;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Configuration;
+using System.Linq;
 using TechTalk.SpecFlow;
+using TechTalk.SpecRun.Common.Helper;
 using WeatherComparator.pageFactory.HomePage;
 using WeatherComparator.pageFactory.WeatherPage;
 using WeatherComparator.stepDefinitions.Utilities;
 
-namespace WeatherComparator.stepDefinitions.Get_Weather_Data_From_NDTV_Web_Steps
+namespace WeatherComparator.stepDefinitions
 {
     [Binding]
     public sealed class Get_Weather_Data_From_NDTV_Web_Steps
@@ -18,6 +21,7 @@ namespace WeatherComparator.stepDefinitions.Get_Weather_Data_From_NDTV_Web_Steps
         private HomePage objHome;
         private WeatherPage objWeather;
         public int defaultTimeOutSeconds;
+        private readonly string[] featureTags;
 
         public Get_Weather_Data_From_NDTV_Web_Steps(IWebDriver Driver)
         {
@@ -26,6 +30,7 @@ namespace WeatherComparator.stepDefinitions.Get_Weather_Data_From_NDTV_Web_Steps
             objHome = new HomePage(driver);
             objWeather = new WeatherPage(driver);
             defaultTimeOutSeconds = Convert.ToInt32(ConfigurationManager.AppSettings["defaultTimeOutSeconds"]);
+            featureTags = FeatureContext.Current.FeatureInfo.Tags;
         }
 
         [Given(@"I open the website's home page")]
@@ -71,9 +76,18 @@ namespace WeatherComparator.stepDefinitions.Get_Weather_Data_From_NDTV_Web_Steps
         {
             string temperatureOfTheCity = objWeather.temperatureInWeatherDetailsPopup.GetAttribute("innerText").Trim();
             Assert.IsTrue(objWebUtils.IsElementDisplayed(objWeather.temperatureInWeatherDetailsPopup), $"The selected city : {cityName}'s weather : {temperatureOfTheCity} is displayed in the Map");
-            Console.WriteLine($"The selected city : {cityName}'s weather/temp in Celcius : {temperatureOfTheCity} is displayed in the Map");
+            Console.WriteLine($"The selected city : {cityName}'s weather/temp in Celsius : {temperatureOfTheCity} is displayed in the Map");
+            if (temperatureOfTheCity.IsNotNullOrEmpty())
+            {
+                double temperatureOfTheCityFromWeb = Convert.ToDouble(temperatureOfTheCity.Split(':')[1]);
+                Console.WriteLine($"Temperature Of The City From NDTV Web : {temperatureOfTheCityFromWeb}");
+                if (!featureTags.IsNullOrEmpty() && featureTags.Contains("comparison"))
+                {
+                    FeatureContext.Current["temperatureOfTheCityFromWeb"] = temperatureOfTheCityFromWeb;
+                }
+            }
         }
 
 
     }
-}
+} 

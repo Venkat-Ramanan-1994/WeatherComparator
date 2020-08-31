@@ -62,7 +62,7 @@ namespace WeatherComparator.stepDefinitions.Utilities
         [BeforeScenario]
         public void BeforeScenario()
         {
-            if (!scenarioTags.Contains("api"))
+            if (scenarioTags.Contains("web"))
             {
                 var browser = ConfigurationManager.AppSettings["defaultBrowser"].ToLower();
                 Console.WriteLine("[BeforeScenario] - Start " + browser);
@@ -117,7 +117,7 @@ namespace WeatherComparator.stepDefinitions.Utilities
         [AfterScenario]
         public void AfterScenario()
         {
-            if (!scenarioTags.Contains("api"))
+            if (scenarioTags.Contains("web"))
             {
                 var browser = ConfigurationManager.AppSettings["defaultBrowser"].ToLower();
                 logger.Debug("***** End Scenario: " + scenarioTitle + " **");

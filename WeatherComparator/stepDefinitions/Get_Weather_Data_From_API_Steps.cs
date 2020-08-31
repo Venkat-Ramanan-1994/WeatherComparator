@@ -1,16 +1,18 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Castle.Core.Internal;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Configuration;
 using System.IO;
+using System.Linq;
 using System.Net;
 using TechTalk.SpecFlow;
 using TechTalk.SpecRun.Common.Helper;
 using WeatherComparator.stepDefinitions.Utilities;
 using AutomationException = WeatherComparator.stepDefinitions.Utilities.AutomationException;
 
-namespace WeatherComparator.stepDefinitions.Get_Weather_Data_From_API_Steps
+namespace WeatherComparator.stepDefinitions
 {
     [Binding]
     public sealed class Get_Weather_Data_From_API_Steps
@@ -18,9 +20,12 @@ namespace WeatherComparator.stepDefinitions.Get_Weather_Data_From_API_Steps
         private APIUtils objAPIUtils; 
         private dynamic requestJSONData;
         private IRestResponse restResponse;
+        private readonly string[] featureTags;
+
         public Get_Weather_Data_From_API_Steps()
         {
             objAPIUtils = new APIUtils();
+            featureTags = FeatureContext.Current.FeatureInfo.Tags;
         }
 
         [Given(@"I set Get Weather service API endpoint")]
@@ -92,9 +97,17 @@ namespace WeatherComparator.stepDefinitions.Get_Weather_Data_From_API_Steps
             Assert.IsTrue(restResponse.StatusCode == HttpStatusCode.OK, $"API request is successfull");
             Console.WriteLine($"Response Content: {restResponse.Content}");
             var responseObject = JsonConvert.DeserializeObject<dynamic>(restResponse.Content);
-            string temperatureOfCityFromAPI = responseObject.main.temp;
-            Console.WriteLine($"Temp of the city from API: {temperatureOfCityFromAPI}");
+            string temperatureOfTheCity = responseObject.main.temp;
+            if (temperatureOfTheCity.IsNotNullOrEmpty())
+            {
+                double temperatureOfTheCityFromAPI = Convert.ToDouble(temperatureOfTheCity) - 273.15;
+                Console.WriteLine($"Temperature Of The City From Weather API : {temperatureOfTheCityFromAPI}");
+                if (!featureTags.IsNullOrEmpty() && featureTags.Contains("comparison"))
+                {
+                    FeatureContext.Current["temperatureOfTheCityFromAPI"] = temperatureOfTheCityFromAPI;
+                }
+            }
+           
         }
-
     }
 }

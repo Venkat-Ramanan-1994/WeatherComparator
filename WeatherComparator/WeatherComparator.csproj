@@ -131,6 +131,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="data\GetWeatherAPIRequest.json" />
+    <None Include="features\Compare_Weather_Data_From_NDTVWeb_And_API.feature" />
     <None Include="features\Get_Weather_Data_From_API.feature" />
     <None Include="features\Get_Weather_Data_From_NDTV_Web.feature" />
     <None Include="localtesting.runsettings" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <Compile Include="pageFactory\HomePage.cs" />
     <Compile Include="pageFactory\WeatherPage.cs" />
+    <Compile Include="stepDefinitions\Compare_Weather_Data_From_NDTVWeb_And_API_Steps.cs" />
     <Compile Include="stepDefinitions\Get_Weather_Data_From_API_Steps.cs" />
     <Compile Include="stepDefinitions\Utilities\APIUtils.cs" />
     <Compile Include="stepDefinitions\Utilities\AutomationException.cs" />
